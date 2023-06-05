@@ -9,7 +9,6 @@
 - utils: Folder containing:
 	- auxiliaries.py: File containing helper functions for the two listed notebooks
 	- constants.py: File containing global constants
-- data: Folder containing the used CIFAR-100 dataset
 - report: Folder containing all the Files for creating the report
 - report.pdf: Final PDF of the report
 
