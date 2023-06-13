@@ -15,7 +15,7 @@ import json
 
 from utils import constants as cst
 
-
+#Fetches the CIFAR100 dataset and returns a training and a test set
 def get_dataset():
     # We use the Cifar100 dataset
     dataset = torchvision.datasets.CIFAR100
@@ -61,7 +61,7 @@ def get_dataset():
 
     return training_set, test_set
 
-
+#returns the loaders per fold
 def get_folds(k_folds=5):
     # Retrieve the full Training Dataset
     training_set, test_set = get_dataset()
@@ -163,6 +163,7 @@ def get_model(config, device):
         torch.backends.cudnn.benchmark = True
     return model
 
+#fetch parameters from excel sheet to run the grid search on
 def get_hyperparams(model_name, optimizer_name, sheet_path):
     # Load the Hyperparams sheet
     hyperparams_df = pd.read_excel(sheet_path)
@@ -197,6 +198,7 @@ def get_hyperparams(model_name, optimizer_name, sheet_path):
     }
     return hyperparams
 
+#store the found hyper parameters back into the sheet
 def store_grid_search_results(all_accuracies, all_hyperparams, best_accuracy, best_hyperparams, model_name, optimizer_name, sheet_path):
     # Load the Hyperparams sheet
     hyperparams_df = pd.read_excel(sheet_path)
@@ -214,7 +216,7 @@ def store_grid_search_results(all_accuracies, all_hyperparams, best_accuracy, be
     hyperparams_df.to_excel(sheet_path, index=False)
 
 
-
+#train the model for a certain number of epochs using speficied model, optimizer and loader
 def train_model(
     model,
     optimizer,
@@ -262,7 +264,7 @@ def train_model(
 
     return loss_list, trained_examples, model
 
-
+#test model using test data
 def test_model(model, test_loader):
     model.eval()
     total_loss = 0
@@ -292,6 +294,7 @@ def test_model(model, test_loader):
     return average_loss, accuracy
 
 
+#perform grid search for a given dictionary of hyperparameters
 def grid_search(model_name, optimizer_name, hyperparams, folds, save_path):
     num_folds = len(folds)
     all_accuracies = []
@@ -373,7 +376,7 @@ def grid_search(model_name, optimizer_name, hyperparams, folds, save_path):
 
     return all_accuracies, all_hyperparams, best_accuracy, best_hyperparams
 
-
+#train model using folding
 def train_with_fold(model_name, optimizer_name, hyperparams, folds):
     num_folds = len(folds)
     accuracy = 0
@@ -427,6 +430,7 @@ def train_with_fold(model_name, optimizer_name, hyperparams, folds):
 
     return accuracy, training_loss_full
 
+#train model without using folds
 def train(model_name, optimizer_name, hyperparams, training_loader, test_loader):
 
     config = dict(
@@ -461,6 +465,7 @@ def train(model_name, optimizer_name, hyperparams, training_loader, test_loader)
 
     return training_loss, acc, test_loss, trained_examples
 
+#helper functions
 
 def write_to_file(optimizer_name, name, arr):
     with open(f'{name}-{optimizer_name}.txt', 'w') as filehandle:
