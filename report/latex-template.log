@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.9.26)  13 JUN 2023 16:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.9.26)  13 JUN 2023 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -778,17 +778,14 @@ Before submitting the final camera ready copy, remember to:
  process uses the appropriate paper size.
 
 [3 <./gen.png>] (./latex-template.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `latex-template.out' has not changed.
 (rerunfilecheck)             Checksum: 4904D2E7C963D6BBC3AE85DA749CBF33;1053.
  ) 
 Here is how much of TeX's memory you used:
- 21326 strings out of 478994
- 407238 string characters out of 5858184
+ 21325 strings out of 478994
+ 407228 string characters out of 5858184
  712495 words of memory out of 5000000
- 38437 multiletter control sequences out of 15000+600000
+ 38436 multiletter control sequences out of 15000+600000
  439102 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,9n,102p,1045b,352s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -805,7 +802,7 @@ xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2021/texmf-dist
 e1/urw/times/utmbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on latex-template.pdf (3 pages, 332314 bytes).
+Output written on latex-template.pdf (3 pages, 332311 bytes).
 PDF statistics:
  203 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams
